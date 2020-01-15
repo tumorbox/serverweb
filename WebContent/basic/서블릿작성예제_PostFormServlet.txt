@@ -1,0 +1,20 @@
+PostFormServlet작성
+
+  모든 요청정보를 서버 콘솔에 출력
+
+   서블릿명:mypost
+   요청url:/mypost.do
+
+[결과]
+Customer
+----------
+아이디:___
+성명:_____
+...
+...
+Favorites : ___
+
+   Favorites에서 선택한 모든 값을
+   추출하기 위해서는   API에서 req.getParameterValues점검하기
+
+서블릿,출력결과 이메일로 제출
