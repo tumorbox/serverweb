@@ -6,3 +6,5 @@ insert into MYDEPT values('003','ÃÑ¹«°ú','3Ãþ','02-123-1236','kim');
 insert into MYDEPT values('004','±âÈ¹½Ç','2Ãþ','02-123-1237','jang');
 
 select*from MYDEPT;
+
+desc mydept;

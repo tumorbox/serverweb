@@ -1,8 +1,13 @@
 package dept;
-
+/*DeptSeurvlet에서 응답화면을 분리하기
+ * 동일한 결과가 출력되도록 foraward작업
+ * 응답결과
+ * 		dept
+ * 			inserResult.jsp작성*/
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +32,12 @@ public class DeptServlet extends HttpServlet {
 		DeptDAOImpl dao = new DeptDAOImpl();
 		int result = dao.insert(dept);
 		
-		pw.print("<h1>삽입성공</h1>");
-		pw.print("<hr/>");
-		pw.print("<h3>"+result+"개의 행 ");
 		
+		//데이터 공유
+		req.setAttribute("insertresult", result);
+		RequestDispatcher rd = req.getRequestDispatcher("/dept/insertResult.jsp");
+		rd.forward(req, res);
+		
+		//res.sendRedirect("/serverweb/dept/insertResult.html");
 	}
 }
